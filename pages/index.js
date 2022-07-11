@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import Layout from '../components/Layout'
+import Me from '../components/Me'
+import Work from '../components/Work'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -10,7 +13,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      
+      <Layout>
+        <Me />
+        <Work />
+      </Layout>
     </div>
   )
 }

@@ -1,0 +1,33 @@
+.work {
+    background: linear-gradient(116.82deg, #040EFF 0%, #001FBD 100%);
+    position: relative;
+    height: 100vh;
+}
+.workContainer {
+    padding: 80px 90px 0px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workContainer h1 {
+    font-size: 400px;
+}
+
+.absoluteCircle1 {
+    width: 530px;
+    height: 530px;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(130.86deg, #E0F028 14.95%, rgba(217, 217, 217, 0) 84.33%);
+    border-radius: 50%;
+}
+.absoluteCircle2 {
+    width: 530px;
+    height: 530px;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    background: linear-gradient(130.86deg, rgba(0, 26, 255, 0.7) 14.95%, rgba(255, 255, 255, 0.5) 84.33%);
+    border-radius: 50%;
+}

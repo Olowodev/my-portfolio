@@ -1,0 +1,24 @@
+.me {
+    height: 100vh;
+}
+
+.mainContainer {
+    margin: 80px 90px 0px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer .firstName {
+    font-size: 150px;
+    line-height: 200px;
+}
+
+.mainContainer .lastName {
+    font-size: 150px;
+    line-height: 200px;
+}
+
+.spin {
+    /*margin-left: 600px;*/
+    align-self: flex-end;
+}
