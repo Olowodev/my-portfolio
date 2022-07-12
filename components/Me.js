@@ -21,7 +21,7 @@ const Me = () => {
                         <p>OLOWOFOYEKU</p>
                     </div>
                     <div className={styles.spin}>
-                        <img src='/scroll.svg' />
+                        <img width={200} height={200} src='/scroll.svg' />
                     </div>
                 </div>
             </div>

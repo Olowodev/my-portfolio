@@ -19,7 +19,26 @@
     line-height: 200px;
 }
 
+@supports((text-stroke: 3px #00000030) or (-webkit-text-stroke: 3px #00000030)) {
+    .mainContainer .lastName {
+        color: transparent;
+        -webkit-text-stroke: 3px #fff;
+        text-stroke: 3px #fff;
+        text-shadow: none;
+    }
+  }
+
 .spin {
     /*margin-left: 600px;*/
     align-self: flex-end;
+    animation: spin 7s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
