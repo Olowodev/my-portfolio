@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Betatron-Regular';
+  src: url('Betatron-Regular.woff2') format('woff2'),
+      url('Betatron-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

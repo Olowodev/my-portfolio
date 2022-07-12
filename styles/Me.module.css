@@ -6,15 +6,16 @@
     margin: 80px 90px 0px 100px;
     display: flex;
     flex-direction: column;
+    font-family: 'Betatron-Regular';
 }
 
 .mainContainer .firstName {
-    font-size: 150px;
+    font-size: 180px;
     line-height: 200px;
 }
 
 .mainContainer .lastName {
-    font-size: 150px;
+    font-size: 180px;
     line-height: 200px;
 }
 
