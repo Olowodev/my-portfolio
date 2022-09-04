@@ -22,6 +22,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 .leftFixed {
@@ -32,7 +33,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 31px;
-  z-index: 2;
+  z-index: 4;
 }
 
 .icons {
@@ -56,6 +57,7 @@ body {
   display: flex;
   align-items: center;
   transform: rotate(90deg);
+  z-index: 4;
 }
 
 .rightFixed .vLine {

@@ -1,7 +1,10 @@
 .work {
     background: linear-gradient(116.82deg, #040EFF 0%, #001FBD 100%);
-    position: relative;
-    height: 100vh;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 .workContainer {
     padding: 80px 90px 0px 100px;

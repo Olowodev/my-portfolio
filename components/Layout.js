@@ -7,16 +7,16 @@ const Layout = ({children}) => {
             <div className='leftFixed'>
                 <div className='icons'>
                     <div className='icon'>
-                        <FaInstagram size={21} />
+                        <a href=''><FaInstagram size={21} /></a>
                     </div>
                     <div className='icon'>
-                        <FaLinkedinIn size={21} />
+                        <a href=''><FaLinkedinIn size={21} /></a>
                     </div>
                     <div className='icon'>
-                        <FaTwitter size={21} />
+                        <a href=''><FaTwitter size={21} /></a>
                     </div>
                     <div className='icon'>
-                        <FaGithub size={21} />
+                        <a href=''><FaGithub size={21} /></a>
                     </div>
                 </div> 
                 <div className='vLine'></div>

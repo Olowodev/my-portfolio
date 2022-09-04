@@ -1,0 +1,40 @@
+.about {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(116.82deg, #be04ff 0%, #7100bd 100%);
+}
+
+.aboutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.aboutBox {
+    position: absolute;
+    z-index: 1;
+    stroke-dasharray: 1768;
+    stroke-dashoffset: 1768;
+    animation: dash 5s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.aboutContainer h1 {
+    font-size: 170px;
+}
+
+.aboutContainer h1 span:first-child {
+    z-index: 2;
+    position: relative;
+}

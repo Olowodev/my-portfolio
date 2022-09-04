@@ -1,5 +1,11 @@
 .me {
-    height: 100vh;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background-color: black;
 }
 
 .mainContainer {
@@ -10,14 +16,53 @@
 }
 
 .mainContainer .firstName {
-    font-size: 180px;
-    line-height: 200px;
+    font-size: 162px;
+    line-height: 162px;
+    overflow: hidden;
+    height: 162px;
+    margin-bottom: 20px;
 }
 
-.mainContainer .lastName {
-    font-size: 180px;
-    line-height: 200px;
+.firstName p {
+    transform: translateY(0);
+    transition: all 3s;
 }
+
+
+
+.firstName:hover p {
+    /*animation: translateY 3s linear;*/
+    transform: translateY(-175px);
+    transition: all 3s;
+}
+
+.firstName:hover ~ .lastName p {
+    /*animation: translateY 3s linear;*/
+    transform: translateY(-175px);
+    transition: all 3s;
+}
+
+/*@keyframes translateY {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-185px);
+    }
+}*/
+
+.mainContainer .lastName {
+    font-size: 162px;
+    line-height: 162px;
+    height: 162px;
+    overflow: hidden;
+}
+
+.lastName p {
+    transform: translateY(0);
+    transition: all 3s;
+}
+
 
 @supports((text-stroke: 3px #00000030) or (-webkit-text-stroke: 3px #00000030)) {
     .mainContainer .lastName {

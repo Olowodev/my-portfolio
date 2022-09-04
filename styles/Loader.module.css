@@ -1,0 +1,57 @@
+/*.Loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/*.Loader div {
+    width: 100px;
+    height: 100px;
+}*/
+
+/*.boxes {
+    display: flex;
+    align-items: center;
+}
+
+.boxes div {
+}
+
+.firstBox {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px 0 0 20px;
+
+}
+
+.secondBox {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.thirdBox {
+    background-color: purple;
+    width: 100px;
+    height: 100px;
+}
+
+.fourthBox {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+@keyframes load1 {
+    20% {
+        width: 300px;
+        height: 300px;
+    }
+    100% {
+        width: 150px;
+        height: 150px;
+    }
+}*/
