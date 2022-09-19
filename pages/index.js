@@ -7,12 +7,22 @@ import Work from '../components/Work'
 import styles from '../styles/Home.module.css'
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
+  const [screen, setScreen] = useState(0)
+  const [cursorX, setCursorX] = useState()
+  const [cursorY, setCursorY] = useState()
+  const cursor = useRef(null)
+  
   gsap.registerPlugin(ScrollTrigger)
 
+
   useEffect(() =>{
+    window.addEventListener('mousemove', (e) => {
+      setCursorX(e.clientX -16)
+      setCursorY(e.clientY -16)
+    })
     let sections = gsap.utils.toArray("section"), 
     currentSectiion = sections[0];
 
@@ -20,32 +30,32 @@ export default function Home() {
   
     gsap.defaults({overwrite: 'auto', duration: 0.3});
   
-    gsap.set("body", {height: (sections.length * 100) + "%"});
+    gsap.set("body", {height: (sections.length * 200) + "%"});
   
     sections.forEach((section, i) => {
       ScrollTrigger.create({
         start: () => (i - 0.5) * innerHeight,
         end: () => (i + 0.5) * innerHeight,
-        onToggle: self => self.isActive && setSection(section)
+        onToggle: self => self.isActive && setSection(section),
       })
     })
   
     function setSection (newSection) {
       if (newSection !== currentSectiion) {
-        gsap.to(currentSectiion, {scale: 0.8, autoAlpha: 0})
-        gsap.to(newSection, {scale: 1, autoAlpha: 1})
+        gsap.to(currentSectiion, { autoAlpha: 0})
+        gsap.to(newSection, { autoAlpha: 1})
         currentSectiion = newSection
+        setScreen(sections.indexOf(currentSectiion))
       }
     }
   
-    ScrollTrigger.create({
+    /*ScrollTrigger.create({
       start: 1,
       end: () => ScrollTrigger.maxScroll(window) - 1,
       onLeaveBack: self => self.scroll(ScrollTrigger.maxScroll(window) - 2),
       onLeave: self => self.scroll(2)
-    }).scroll(2)
+    }).scroll(2)*/
   }, [])
-  
   return (
     <div className={styles.home}>
       <Head>
@@ -56,11 +66,11 @@ export default function Home() {
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link href='https://fonts.googleapis.com/css2?family=Scope+One&display=swap' rel='stylesheet' />
       </Head>
-
-      <Layout>
-        <Me />
-        <About />
-        <Work />
+      <Layout cursor={cursor} screen={screen}>
+        <Me cursorX={cursorX} cursorY={cursorY} cursor={cursor} />
+        <About cursorX cursorY cursor={cursor} />
+        <Work cursorX cursorY cursor={cursor} />
+        <div ref={cursor} className='cursor' style={{left: cursorX, top: cursorY}}></div>
       </Layout>
     </div>
   )

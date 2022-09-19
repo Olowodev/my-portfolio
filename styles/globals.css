@@ -23,6 +23,33 @@ body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   height: 100%;
+  cursor: none;
+}
+
+.cursor {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  mix-blend-mode: difference;
+  z-index: 100;
+  position: fixed;
+  transition: width .5s, height .5s;
+  pointer-events: none;
+}
+
+.cursor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: width .5s, height .5s;
+  pointer-events: none;
 }
 
 .leftFixed {
@@ -34,6 +61,10 @@ body {
   align-items: center;
   gap: 31px;
   z-index: 4;
+}
+
+a {
+  cursor: none;
 }
 
 .icons {
@@ -77,6 +108,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   bottom: 41px;
+  z-index: 4;
 }
 
 .dot.active {
@@ -85,7 +117,7 @@ body {
   border: 1px solid #fff;
   width: 18px;
   height: 18px;
-
+  transition: all .5s;
 }
 
 .dot {
@@ -93,6 +125,7 @@ body {
   height: 12px;
   background-color: #fff;
   transform: rotate(45deg);
+  transition: all .5s;
 }
 
 a {
