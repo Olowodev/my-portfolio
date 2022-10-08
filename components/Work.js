@@ -1,5 +1,13 @@
 import styles from '../styles/Work.module.css'
 
+
+const Picture = () => {
+    return (
+        <>
+            
+        </>
+    )
+}
 const Work = ({cursor}) => {
     const onMouseEnter = () => {
         cursor.current.style.width = '60px';
@@ -15,7 +23,7 @@ const onMouseLeave = () => {
     cursor.current.style.marginTop = '0px';
 }
     return (
-        <section className={styles.work}>
+        <section data-scroll-section className={styles.work}>
             <div className={styles.workContainer}>
                 <div>
                 <h1>WORK</h1>

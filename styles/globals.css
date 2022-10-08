@@ -55,7 +55,7 @@ body {
 .leftFixed {
   position: fixed;
   bottom: 0;
-  left: 70px;
+  left: 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,7 +83,7 @@ a {
 .rightFixed {
   position: fixed;
   bottom: 28%;
-  right: -140px;
+  right: -10vw;
   gap: 31px;
   display: flex;
   align-items: center;
