@@ -37,7 +37,7 @@ const Picture = ({cover, index, setScreen}) => {
         ref.current.uMouse = e.point
     }
     useEffect(() => {
-        gsap.timeline(
+        const tl = gsap.timeline(
             {
                 scrollTrigger: {
                   trigger: '#work',
@@ -45,12 +45,12 @@ const Picture = ({cover, index, setScreen}) => {
                   end: '+=100%',
                   pin: true,
                   anticipatePin: 1,
-                  scrub: 1.5,
+                  scrub: true,
                   onToggle: self => self.isActive && setScreen(2)
                 }
               }
-        )
-        .to(state, {
+        );
+        tl.to(state, {
           x: -2.5,
         })
 
