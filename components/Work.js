@@ -49,8 +49,8 @@ const Picture = ({cover, index, setScreen}) => {
                   onToggle: self => self.isActive && setScreen(2)
                 }
               }
-        );
-        tl.to(state, {
+        )
+        .to(state, {
           x: -2.5,
         })
 
