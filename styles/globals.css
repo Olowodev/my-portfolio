@@ -21,9 +21,9 @@ body {
   background-color: #000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
   height: 100%;
   cursor: none;
+  
 }
 
 .cursor {

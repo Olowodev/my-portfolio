@@ -6,8 +6,21 @@ import { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger)
 
-const About = ({cursor, about}) => {
-  
+const About = ({cursor, setScreen}) => {
+
+    const about = useRef()
+useEffect(()=>{
+    console.log(about.current.scrollHeight)
+
+}, [])
+    // useEffect(() => {
+    //     ScrollTrigger.create({
+    //         start: 'top top',
+    //         end: 'bottom top',
+    //         onToggle: self => self.isActive && setScreen(1)
+    //     })
+    // }, [])
+    
     const onMouseEnter = () => {
         cursor.current.style.width = '60px';
         cursor.current.style.height = '60px';

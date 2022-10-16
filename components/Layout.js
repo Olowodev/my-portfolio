@@ -40,7 +40,7 @@ const onMouseLeave = () => {
                 <div className={`dot ${screen == 1 ? 'active' : null}`}></div>
                 <div className={`dot ${screen == 2 ? 'active' : null}`}></div>
                 <div className={`dot ${screen == 3 ? 'active' : null}`}></div>
-                <div className={`dot ${screen == 4 ? 'active' : null}`}></div>
+                {/* <div className={`dot ${screen == 4 ? 'active' : null}`}></div> */}
             </div>
             <div className='rightFixed'>
                 <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className='rightFixedText'>

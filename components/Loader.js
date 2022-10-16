@@ -1,6 +1,6 @@
-{/*import styles from '../styles/Loader.module.css'
+import styles from '../styles/Loader.module.css'
 
-const Loader = () => {
+const Loader = ({}) => {
     return (
         <div className={styles.Loader}>
             <div className={styles.boxes}>
@@ -13,4 +13,4 @@ const Loader = () => {
     );
 }
 
-export default Loader;*/}
+export default Loader;

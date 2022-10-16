@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaGithub, FaInstagram, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 import styles from '../styles/Contact.module.css'
+import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
 
-const Contact = ({cursor}) => {
+gsap.registerPlugin(ScrollTrigger)
+
+const Contact = ({cursor, setScreen}) => {
+
+    // useEffect(() => {
+    //     ScrollTrigger.create({
+    //         start: 'top top',
+    //         end: 'bottom top',
+    //         onToggle: self => self.isActive && setScreen(1)
+    //     })
+    // }, [])
+    
   return (
-    <section className={styles.contact} data-scroll-section>
+    <section id='contact' className={styles.contact} data-scroll-section>
         <div className={styles.contactContainer}>
             <div className={styles.contactHeader}>
                 <p>NEED MY SERVICES?</p>

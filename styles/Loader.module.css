@@ -1,16 +1,21 @@
-/*.Loader {
+.Loader {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 9999;
 }
 
-/*.Loader div {
+.Loader div {
     width: 100px;
     height: 100px;
-}*/
+}
 
-/*.boxes {
+.boxes {
     display: flex;
     align-items: center;
 }
@@ -54,4 +59,4 @@
         width: 150px;
         height: 150px;
     }
-}*/
+}

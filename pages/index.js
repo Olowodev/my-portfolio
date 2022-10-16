@@ -10,13 +10,15 @@ import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
 import { useEffect, useRef, useState } from 'react'
 import useLocoScroll from '../hooks/useLocoScroll'
 import Contact from '../components/Contact'
+import Loader from '../components/Loader'
 
 export default function Home() {
   const [screen, setScreen] = useState(0)
   const [cursorX, setCursorX] = useState()
   const [cursorY, setCursorY] = useState()
+  //const [loading, setLoading] = useState(true)
   const cursor = useRef(null)
-  
+
   gsap.registerPlugin(ScrollTrigger)
 
   const mouse = (e) => {
@@ -26,9 +28,54 @@ export default function Home() {
   const tl = gsap.timeline()
   //useLocoScroll()
 
+  const changeScreen = (number) => {
+    setScreen(number)
+    console.log(number)
+  }
+
+  // useEffect(() => {
+  //   window.addEventListener('load', ()=> {
+  //     setLoading(false)
+  //   })
+
+  //   return (
+  //     window.removeEventListener('load', ()=> {
+  //       setLoading(false)
+  //     })
+  //   )
+  // }, [])
+
 
   useEffect(()=> {
+    //if (loading == false) {
+      ScrollTrigger.create( {
+        trigger: '#me',
+        start: 'top top',
+        onToggle: self => self.isActive && setScreen(0)
+      })
+    //   ScrollTrigger.create( {
+    //     trigger: '#about',
+    //     start: 'top top',
+    //     markers: true,
+    //     onToggle: self => self.isActive && setScreen(1)
+    //   }
+    // )
+
+    
+    //   ScrollTrigger.create({
+    //     trigger: '#work',
+    //     start: self => self.previous().end,
+    //     markers: true,
+    //     onToggle: self => self.isActive && setScreen(2)
+    //   }
+    // )
+
+    
+
+    //}
   }, [])
+
+  
   useEffect(()=> {
     
     gsap.timeline(
@@ -38,7 +85,8 @@ export default function Home() {
           start: 'top top',
           end: '+=100%',
           pin: true,
-          scrub: true
+          scrub: true,
+          onToggle: self => self.isActive && setScreen(1)
         }
       }
     )
@@ -66,15 +114,12 @@ export default function Home() {
   useEffect(()=> {
     const changeColorToWhite = (p) => {
       gsap.to(p, {color: 'white'})
-      console.log('white called')
     }
     const changeColorToGrey = (p) => {
       gsap.to(p, {color: 'rgba(255, 255, 255, 0.2)'})
-      console.log('grey called')
     }
     window.addEventListener('scroll', ()=> {
      const div = gsap.getProperty('#story', 'y')
-    console.log(div)
     let ps = gsap.utils.toArray('#p')
       let p1 = '#p1'
       ps.forEach((p, i) => {
@@ -93,6 +138,7 @@ export default function Home() {
 
   useEffect(() =>{
     window.addEventListener('mousemove', mouse)
+    console.log(innerHeight)
     /*let sections = gsap.utils.toArray("section"), 
     currentSectiion = sections[0];
 
@@ -128,6 +174,7 @@ export default function Home() {
     }).scroll(2)*/
   }, [])
   return (
+    
     <div data-scroll-container id='main-page-container' className={styles.home}>
       <Head>
         <title>Create Next App</title>
@@ -137,12 +184,16 @@ export default function Home() {
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Scope+One&display=swap" rel="stylesheet"></link>
       </Head>
+      <div ref={cursor} className='cursor' style={{}}></div>
+      {/* <Loader />  */}
       <Layout cursor={cursor} screen={screen}>
-        <Me cursorX={cursorX} cursorY={cursorY} cursor={cursor} />
-        <About cursorX cursorY cursor={cursor} />
-        <Work cursorX cursorY cursor={cursor} />
-        <Contact cursor={cursor} />
-        <div ref={cursor} className='cursor' style={{}}></div>
+        <Me setScreen={setScreen} cursorX={cursorX} cursorY={cursorY} cursor={cursor} />
+        <About cursorX cursorY setScreen={setScreen} cursor={cursor} /> 
+        <Work cursorX cursorY setScreen={setScreen} cursor={cursor} />
+        {/* <Contact cursor={cursor} setScreen={setScreen} /> */}
+        {/* <About cursorX cursorY setScreen={setScreen} cursor={cursor} /> */}
+
+        <Contact cursor={cursor} setScreen={setScreen} />
       </Layout>
     </div>
   )

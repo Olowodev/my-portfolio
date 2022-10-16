@@ -8,6 +8,9 @@ import fragment from "raw-loader!glslify-loader!../shaders/fragment.frag"
 import vertex from "raw-loader!glslify-loader!../shaders/vertex.vert"
 import { shaderMaterial } from '@react-three/drei';
 import gsap from 'gsap';
+import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 
 const MyShaderMaterial = shaderMaterial(
@@ -32,8 +35,18 @@ const Wave = () => {
         </mesh>
     )
 }
-const Me = ({cursor, cursorX, cursorY}) => {
 
+
+const Me = ({cursor, cursorX, cursorY, setScreen}) => {
+
+    // useEffect(()=> {
+    //     ScrollTrigger.create({
+    //         start: 'top top',
+    //         end: 'bottom top',
+    //         onToggle: self => self.isActive && setScreen(0)
+    //     })
+    // }, [])
+    
     
     const onMouseEnter = () => {
             cursor.current.style.width = '60px';
